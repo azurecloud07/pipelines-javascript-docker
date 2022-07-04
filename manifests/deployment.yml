@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: azurecloudpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azurecloudpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: azurecloudpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: azurecloudpipelinesjavascriptdocker 
+          image: acrliberty.azurecr.io/azurecloudpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
